@@ -1,0 +1,153 @@
+////////
+// variables for easy configuration
+//
+// (note: this is a less extendend css script, to learn more about less; see lesscss.org)
+
+@color:                  black;
+@color-step:             #dd0000;
+@color-step-hidden:      silver;
+
+@background-color-code:  #ffffa9;
+
+// -- gradient colors used for slides classified with cover | title
+
+@background-gradient-color1-cover: white;
+@background-gradient-color2-cover: white;
+
+// -- gradient colors for all other slides
+
+@background-gradient-color1: white;
+@background-gradient-color2: white;
+
+// --- font size
+
+@font-size-h1:     200%;    // 30pt / 40px    (assuming 100% => 12pt / 16px)
+@font-size-h2:     220%;    // 28pt / 37px
+@font-size-h3:     180%;    // 24pt / 32px
+@font-size-hX:     250%;    
+@font-size-text:   150%;    // 18pt / 24px
+@font-size-list:   160%;    // 18pt / 24px
+@font-size-code:   100%;    // 16pt / 22px
+@font-small-size:  90%;
+@font-smaller-size:  80%;
+
+/////////////////////////////
+
+body { font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;  }
+
+a:link,
+a:visited { color: @color; }
+
+
+.slide {
+
+  color: @color;
+  
+  h1 {   font-size: @font-size-h1;
+         color: white;
+         text-align: center;
+
+       &.fullscreen { position: absolute;
+                      top: 40%;
+                      width: 100%; }
+
+       // lets you create slides with no heading (that is, heading gets hidden but included in toc) 
+       &.hidden     { display: none; }
+      }
+  
+  hX {   font-size: @font-size-hX;
+         color: white;
+         text-align: center;
+	 font-weight: bold;
+       &.fullscreen { position: absolute;
+                      top: 40%;
+                      width: 100%; }
+
+       // lets you create slides with no heading (that is, heading gets hidden but included in toc) 
+       &.hidden     { display: none; }
+      }
+
+  h2 { font-size: @font-size-h2; background-color: #808db5; color:white; padding: 5px;}
+
+  h3 { font-size: @font-size-h3; }
+  name {
+     font-size: @font-size-h3;
+      background-color: #ffcc00;
+       &.fullscreen { position: absolute;
+                      top: 40%;
+                      width: 100%; }
+   }
+
+  .stepcurrent { color: @color-step; }
+  .step        { color: @color-step-hidden; }  // or hide next steps e.g. .step { visibility: hidden; } 
+
+
+}
+
+div.highlight {background-color:@background-color-code; display: inline-block; _display: inline;}
+div > ul { list-style-type: square;  font-size: @font-size-list;}
+div > ol {font-size: @font-size-list;}
+li { margin-bottom: 15px;}
+
+p, dt, dd, td{ font-size: @font-size-text; }
+th { font-size: @font-small-size;}
+
+p.emphasize {font-size: @font-size-h3}
+pre {font-size: @font-size-code; }
+
+.code { 
+        background-color: @background-color-code;
+        padding: 5px;
+          }
+.small_code {
+        font-size: @font-small-size; 
+        padding: 2px;
+}
+
+.smaller_code {
+        font-size: @font-smaller-size; 
+        padding: 2px;
+}
+
+code {
+        font-size: @font-size-code; 
+        background-color: @background-color-code;
+        padding: 5px;
+     }
+.footnote a:first-of-type  { text-decoration: none; }
+
+
+p.footnote { font-size: 88%; }
+
+.help {
+  p, td  { font-size: 88%; }
+}
+ 
+/******** 
+ * example gradient background using css3
+ */
+
+.slide {
+  background-image: -webkit-linear-gradient(top, @background-gradient-color1,
+                                                 @background-gradient-color2,
+                                                 @background-gradient-color1,
+                                                 @background-gradient-color2);
+  
+  background-image: -moz-linear-gradient(top, @background-gradient-color1,
+                                              @background-gradient-color2,
+                                              @background-gradient-color1,
+                                              @background-gradient-color2);
+                                              
+  &.cover, &.title {
+   background-image: -webkit-linear-gradient(top, @background-gradient-color1-cover,
+                                                 @background-gradient-color2-cover,
+                                                 @background-gradient-color1-cover,
+                                                 @background-gradient-color2-cover);
+  
+   background-image: -moz-linear-gradient(top, @background-gradient-color1-cover,
+                                              @background-gradient-color2-cover,
+                                              @background-gradient-color1-cover,
+                                              @background-gradient-color2-cover);
+
+  }
+}

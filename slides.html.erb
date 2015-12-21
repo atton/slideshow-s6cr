@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+   <meta http-equiv="content-type" content="text/html;charset=utf-8">
    <title><%= @headers['title'] %></title>
 
 <meta name="generator" content="<%= @headers['generator'] %>">
 <meta name="author"    content="<%= @headers['author']%>" >
 
-<!-- S6 style sheet links -->
-<link rel="stylesheet" href="<%= "#{@name}.css" %>" media="projection" id="styleProjection">
-<link rel="stylesheet" href="s6/screen.css"         media="screen"     id="styleScreen">
-<link rel="stylesheet" href="s6/print.css"          media="print">
+<!-- style sheet links -->
+<link rel="stylesheet/less" href="s6/themes/projection.css.less"   media="screen,projection">
+<link rel="stylesheet/less" href="s6/themes/screen.css.less"       media="screen">
+<link rel="stylesheet/less" href="s6/themes/print.css.less"        media="print">
+<link rel="stylesheet/less" href="s6/themes/cr.css.less"           media="screen,projection">
 
-<!-- S6 JS -->
-<script src="s6/jquery.js"></script>
-<script src="s6/jquery.slideshow.js"></script>
+<!-- JS -->
+<script src="s6/js/jquery-1.7.min.js"></script>
+<script src="s6/js/less-2.5.3.min.js"></script>
+<script src="s6/js/jquery.slideshow.js"></script>
+<script src="s6/js/jquery.slideshow.counter.js"></script>
+<script src="s6/js/jquery.slideshow.controls.js"></script>
+<script src="s6/js/jquery.slideshow.footer.js"></script>
+<script src="s6/js/jquery.slideshow.autoplay.js"></script>
+
 <script>
   $(document).ready( function() {
     Slideshow.init();
@@ -25,7 +32,7 @@
 
 <!-- Better Browser Banner for Microsoft Internet Explorer (IE) -->
 <!--[if IE]>
-<script src="s6/jquery.microsoft.js"></script>
+<script src="s6/js/jquery.microsoft.js"></script>
 <![endif]-->
 
 <%= content_for :head %>
@@ -33,16 +40,38 @@
 </head>
 <body>
 
-<div class="layout"> 
+<div class="layout">
   <div id="header"></div>
   <div id="footer">
-    <h1><%= @headers['footer'] %></h1>
-    <h2><%= @headers['subfooter'] %></h2>
+    <div align="right">
+      <img src="s6/images/logo.svg" width="200">
+    </div>
   </div>
 </div>
 
 <div class="presentation">
-   
+
+  <div class='slide cover'>
+    <table width="90%" height="90%" border="0" align="center">
+      <tr>
+        <td>
+          <div align="center">
+            <h1><font color="#808db5"><%= @headers['title'] %></font></h1>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div align="left">
+            <%= @headers['author'] %>
+            <%= @headers['profile'] %>
+            <hr style="color:#ffcc00;background-color:#ffcc00;text-align:left;border:none;width:100%;height:0.2em;">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
 <%= @content %>
 
 </div><!-- presentation -->
