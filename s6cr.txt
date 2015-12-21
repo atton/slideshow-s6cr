@@ -11,7 +11,7 @@ s6/themes/screen.css.less
 
 # javascript machinery
 
-s6/js/jquery-1.7.min.js
+s6/js/jquery-1.11.3.min.js
 s6/js/jquery.microsoft.js
 s6/js/jquery.slideshow.autoplay.js
 s6/js/jquery.slideshow.controls.js
