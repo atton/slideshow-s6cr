@@ -1,0 +1,5 @@
+syntax: glob
+# Komodo Project Files
+
+*.kpf
+*.swp
