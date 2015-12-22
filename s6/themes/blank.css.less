@@ -24,7 +24,7 @@
 @font-size-h1:     200%;    // 30pt / 40px    (assuming 100% => 12pt / 16px)
 @font-size-h2:     220%;    // 28pt / 37px
 @font-size-h3:     180%;    // 24pt / 32px
-@font-size-hX:     250%;    
+@font-size-hX:     250%;
 @font-size-text:   150%;    // 18pt / 24px
 @font-size-list:   160%;    // 18pt / 24px
 @font-size-code:   100%;    // 16pt / 22px
@@ -42,7 +42,7 @@ a:visited { color: @color; }
 .slide {
 
   color: @color;
-  
+
   h1 {   font-size: @font-size-h1;
          color: white;
          text-align: center;
@@ -51,10 +51,10 @@ a:visited { color: @color; }
                       top: 40%;
                       width: 100%; }
 
-       // lets you create slides with no heading (that is, heading gets hidden but included in toc) 
+       // lets you create slides with no heading (that is, heading gets hidden but included in toc)
        &.hidden     { display: none; }
       }
-  
+
   hX {   font-size: @font-size-hX;
          color: white;
          text-align: center;
@@ -63,7 +63,7 @@ a:visited { color: @color; }
                       top: 40%;
                       width: 100%; }
 
-       // lets you create slides with no heading (that is, heading gets hidden but included in toc) 
+       // lets you create slides with no heading (that is, heading gets hidden but included in toc)
        &.hidden     { display: none; }
       }
 
@@ -79,7 +79,7 @@ a:visited { color: @color; }
    }
 
   .stepcurrent { color: @color-step; }
-  .step        { color: @color-step-hidden; }  // or hide next steps e.g. .step { visibility: hidden; } 
+  .step        { color: @color-step-hidden; }  // or hide next steps e.g. .step { visibility: hidden; }
 
 
 }
@@ -94,23 +94,24 @@ th { font-size: @font-small-size;}
 
 p.emphasize {font-size: @font-size-h3}
 pre {font-size: @font-size-code; }
+pre > code {display: block;}
 
-.code { 
+.code {
         background-color: @background-color-code;
         padding: 5px;
           }
 .small_code {
-        font-size: @font-small-size; 
+        font-size: @font-small-size;
         padding: 2px;
 }
 
 .smaller_code {
-        font-size: @font-smaller-size; 
+        font-size: @font-smaller-size;
         padding: 2px;
 }
 
 code {
-        font-size: @font-size-code; 
+        font-size: @font-size-code;
         background-color: @background-color-code;
         padding: 5px;
      }
@@ -122,8 +123,8 @@ p.footnote { font-size: 88%; }
 .help {
   p, td  { font-size: 88%; }
 }
- 
-/******** 
+
+/********
  * example gradient background using css3
  */
 
@@ -132,18 +133,18 @@ p.footnote { font-size: 88%; }
                                                  @background-gradient-color2,
                                                  @background-gradient-color1,
                                                  @background-gradient-color2);
-  
+
   background-image: -moz-linear-gradient(top, @background-gradient-color1,
                                               @background-gradient-color2,
                                               @background-gradient-color1,
                                               @background-gradient-color2);
-                                              
+
   &.cover, &.title {
    background-image: -webkit-linear-gradient(top, @background-gradient-color1-cover,
                                                  @background-gradient-color2-cover,
                                                  @background-gradient-color1-cover,
                                                  @background-gradient-color2-cover);
-  
+
    background-image: -moz-linear-gradient(top, @background-gradient-color1-cover,
                                               @background-gradient-color2-cover,
                                               @background-gradient-color1-cover,

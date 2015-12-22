@@ -89,6 +89,9 @@ p.emphasize {
 pre {
   font-size: 100%;
 }
+pre > code {
+  display: block;
+}
 .code {
   background-color: #ffffa9;
   padding: 5px;
@@ -116,7 +119,7 @@ p.footnote {
 .help td {
   font-size: 88%;
 }
-/******** 
+/********
  * example gradient background using css3
  */
 .slide {

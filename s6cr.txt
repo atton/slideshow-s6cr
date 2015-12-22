@@ -24,3 +24,7 @@ s6/js/less-2.5.3.min.js
 
 # images
 s6/images/logo.svg
+
+# prettify
+scripts/prettify.css
+scripts/prettify.js

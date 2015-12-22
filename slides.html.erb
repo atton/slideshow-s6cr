@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="s6/themes/projection.css"   media="screen,projection">
 <link rel="stylesheet" href="s6/themes/screen.css"       media="screen">
 <link rel="stylesheet" href="s6/themes/print.css"        media="print">
-<link rel="stylesheet" href="s6/themes/cr.css"           media="screen,projection">
+<link rel="stylesheet" href="s6/themes/blank.css"        media="screen,projection">
 
 <!-- JS -->
 <script src="s6/js/jquery-1.11.3.min.js"></script>
@@ -21,9 +21,20 @@
 <script src="s6/js/jquery.slideshow.footer.js"></script>
 <script src="s6/js/jquery.slideshow.autoplay.js"></script>
 
+<!-- prettify -->
+<link rel="stylesheet" href="scripts/prettify.css">
+<script src="scripts/prettify.js"></script>
+
 <script>
   $(document).ready( function() {
     Slideshow.init();
+
+    $('code').each(function(_, el) {
+      if (!el.classList.contains('noprettyprint')) {
+        el.classList.add('prettyprint');
+      }
+    });
+    prettyPrint();
   } );
 
   <%= content_for :js %>
