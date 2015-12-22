@@ -32,6 +32,7 @@
     $('code').each(function(_, el) {
       if (!el.classList.contains('noprettyprint')) {
         el.classList.add('prettyprint');
+        el.style.display = 'block';
       }
     });
     prettyPrint();
