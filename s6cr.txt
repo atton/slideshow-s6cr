@@ -4,10 +4,10 @@ __file__.html   slides.html.erb
 
 # styles
 
-s6/themes/blank.css.less
-s6/themes/print.css.less
-s6/themes/projection.css.less
-s6/themes/screen.css.less
+s6/themes/blank.css
+s6/themes/print.css
+s6/themes/projection.css
+s6/themes/screen.css
 
 # javascript machinery
 
